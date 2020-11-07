@@ -25,23 +25,23 @@
     "format": "prettier --write \"**/*.{css,scss,json,html,yaml,mdx}\"",
     "lint:js": "eslint . --fix",
     "lint:scss": "stylelint \"packages/**/*.scss\" --fix",
-    "release": "npm run release-it",
-    "release:ci": "npm run release-it --ci",
-    "release:dry": "npm run release-it --ci --dry-run"
+    "pre:release": "git pull upstream main --tags",
+    "release": "npm run pre:release && release-it",
+    "release:ci": "release-it --ci",
+    "release:dry": "release-it --ci --dry-run"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org"
   },
   "release-it": {
     "plugins": {
-      "release-it-yarn-workspaces": true,
+      "release-it-yarn-workspaces": {
+        "skipChecks": true
+      },
       "@release-it/conventional-changelog": {
         "preset": "conventionalcommits",
         "infile": "CHANGELOG.md"
       }
-    },
-    "hooks": {
-      "before:init": "git pull upstream main --tags"
     },
     "github": {
       "release": true

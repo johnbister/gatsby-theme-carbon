@@ -7,13 +7,12 @@
   width: 0;
   height: 0;
   opacity: 0;
-  margin-top: 456px;
   overflow: hidden;
   white-space: nowrap;
   z-index: 10000; /* old z('floating') #940 */
   transition-property: width, height, opacity;
   transition-duration: 250ms;
-  transition-delay: 70ms, 0ms;
+  transition-delay: 70ms, 0ms, 0ms;
   transition-timing-function: motion(standard, expressive);
 }
 
@@ -21,7 +20,6 @@
   height: 456px;
   width: 320px;
   opacity: 1;
-  margin-top: 0;
   transition-property: width, height;
   transition-duration: 120ms, 200ms;
   transition-delay: 0ms, 40ms;
@@ -43,16 +41,11 @@
   width: 100%;
   top: 200px;
   opacity: 0;
-  transition-duration: 350ms;
+  transition-duration: 300ms;
   transition-timing-function: motion(entrance, expressive);
 }
 
 .form-container-active {
-  position: relative;
-  padding: $spacing-05;
-  padding-bottom: $spacing-08;
-  color: var(--cds-text-02);
-  width: 100%;
   top: 0px;
   opacity: 1;
   transition-duration: 240ms;
@@ -87,7 +80,7 @@
   height: 0;
   margin-top: 4rem; //used to transition height from bottom
   overflow: hidden;
-  transition: all 210ms motion(entrance, productive);
+  transition: all 210ms motion(standard, productive);
   transition-delay: 120ms;
 }
 

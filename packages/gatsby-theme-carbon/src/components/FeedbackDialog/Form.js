@@ -44,7 +44,7 @@ const Form = ({ visible, setVisible, onSubmit: submitHandler }) => {
       setVisible(false);
       previouslyFocusedElement.current.focus();
       resetForm();
-    }, 1200);
+    }, 1000);
   };
 
   const onCancel = () => {

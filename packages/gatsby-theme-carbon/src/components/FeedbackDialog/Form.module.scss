@@ -76,7 +76,7 @@
   flex-direction: column;
 }
 
-.buttonRow {
+.button-row {
   height: 0;
   margin-top: 4rem; //used to transition height from bottom
   overflow: hidden;
@@ -84,7 +84,7 @@
   transition-delay: 120ms;
 }
 
-.buttonRow-active {
+.button-row-active {
   height: 4rem;
   margin-top: 0;
   transition: all 120ms motion(entrance, productive);

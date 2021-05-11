@@ -10,6 +10,7 @@ import NextPrevious from '../components/NextPrevious';
 import PageTabs from '../components/PageTabs';
 import Main from '../components/Main';
 import useMetadata from '../util/hooks/useMetadata';
+import LastModifiedDate from '../components/LastModifiedDate';
 
 const Default = ({ pageContext, children, location, Title }) => {
   const { frontmatter = {}, relativePagePath, titleType } = pageContext;
@@ -19,6 +20,7 @@ const Default = ({ pageContext, children, location, Title }) => {
     theme: frontmatterTheme,
     description,
     keywords,
+    date,
   } = frontmatter;
 
   const { interiorTheme } = useMetadata();
@@ -66,10 +68,18 @@ const Default = ({ pageContext, children, location, Title }) => {
         tabs={tabs}
         theme={theme}
       />
-      {tabs && <PageTabs slug={slug} tabs={tabs} currentTab={currentTab} />}
+      {tabs && (
+        <PageTabs
+          title={title}
+          slug={slug}
+          tabs={tabs}
+          currentTab={currentTab}
+        />
+      )}
       <Main padded>
         {children}
         <EditLink relativePagePath={relativePagePath} />
+        <LastModifiedDate date={date} />
       </Main>
       <NextPrevious
         pageContext={pageContext}

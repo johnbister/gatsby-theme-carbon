@@ -86,9 +86,7 @@
   margin: 0;
 
   @include carbon--breakpoint('lg') {
-    padding-left: calc(
-      2% + 2rem
-    ); //2rem to account for 2rem left padding default on grid
+    padding-left: 2rem;
   }
 
   @include carbon--breakpoint('max') {
@@ -98,4 +96,9 @@
 
 .container--homepage .#{$prefix}--col-no-gutter {
   padding: 0;
+}
+
+.bx--side-nav__overlay-active {
+  //rel: https://github.com/carbon-design-system/carbon-website/pull/2187
+  width: 100%;
 }
